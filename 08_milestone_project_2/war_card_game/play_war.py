@@ -16,7 +16,6 @@ class PlayWar:
         self.game_on = True
         self.at_war = True
 
-
     def play(self):
         while self.game_on:
             self.round_number += 1
@@ -31,13 +30,13 @@ class PlayWar:
                 if self.player1_played_cards[-1].value > self.player2_played_cards[-1].value:
                     self.player1.add_cards(self.player1_played_cards)
                     self.player1.add_cards(self.player2_played_cards)
-
+                    print("player 1 wins this round")
                     self.at_war = False
 
                 elif self.player2_played_cards[-1].value > self.player1_played_cards[-1].value:
                     self.player2.add_cards(self.player1_played_cards)
                     self.player2.add_cards(self.player2_played_cards)
-
+                    print("player 2 wins this round")
                     self.at_war = False
 
                 else:
@@ -87,6 +86,7 @@ class PlayWar:
         return False
 
     def start_next_round(self):
+        self.at_war = True
         self.player1_played_cards = []
         self.player1_played_cards.append(self.player1.remove_one_card())
 
