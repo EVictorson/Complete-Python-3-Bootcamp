@@ -14,7 +14,6 @@ class Deck:
     all_cards : list[card]
         list of card objects
 
-
     """
 
     def __init__(self):

@@ -16,9 +16,11 @@ class Player:
         self.hand = []
 
     def remove_one_card(self):
+        """ remove one card from the player """
         return self.hand.pop()
 
     def add_cards(self, new_cards):
+        """ add cards to the player in the event they won """
         if type(new_cards) == type([]):
             # If a list of cards is passed, extend the current list
             self.hand.extend(new_cards)
