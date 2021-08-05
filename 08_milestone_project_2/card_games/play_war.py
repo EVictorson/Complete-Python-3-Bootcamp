@@ -37,11 +37,11 @@ class PlayWar:
     NUM_DRAWN_CARDS = 3
 
     def __init__(self):
-        self.player1 = player.Player("one")
-        self.player2 = player.Player("Two")
+        self.player1 = Player("one")
+        self.player2 = Player("Two")
         self.player1_played_cards = []
         self.player2_played_cards = []
-        self.new_deck = deck.Deck()
+        self.new_deck = Deck()
         self.new_deck.shuffle()
         self.deal_cards()
         self.round_number = 0
@@ -95,7 +95,7 @@ class PlayWar:
 
     def deal_cards(self):
         """ split deck and deal cards to players """
-        for _ in range(int(card.Card.MAX_COUNT/2)):
+        for _ in range(int(Card.MAX_COUNT/2)):
             self.player1.add_cards(self.new_deck.deal_one_card())
             self.player2.add_cards(self.new_deck.deal_one_card())
 
