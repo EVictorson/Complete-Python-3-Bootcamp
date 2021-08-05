@@ -1,4 +1,6 @@
-import player, deck, card
+import player
+import deck
+import card
 
 class PlayWar:
     """
@@ -82,13 +84,13 @@ class PlayWar:
                         break
 
                     else:
-                        for num in range(self.NUM_DRAWN_CARDS):
+                        for _ in range(self.NUM_DRAWN_CARDS):
                             self.player1_played_cards.append(self.player1.remove_one_card())
                             self.player2_played_cards.append(self.player2.remove_one_card())
 
     def deal_cards(self):
         """ split deck and deal cards to players """
-        for i in range(int(card.Card.MAX_COUNT/2)):
+        for _ in range(int(card.Card.MAX_COUNT/2)):
             self.player1.add_cards(self.new_deck.deal_one_card())
             self.player2.add_cards(self.new_deck.deal_one_card())
 
