@@ -3,7 +3,7 @@
 import unittest
 import sys
 sys.path.append('../')
-import card
+from playing_cards import Card
 
 class TestCard(unittest.TestCase):
     POSSIBLE_VALUES = {'two':2, 'three':3, 'four':4, 'five':5, 'six':6,
@@ -13,22 +13,22 @@ class TestCard(unittest.TestCase):
     POSSIBLE_RANKS = ('two', 'three', 'four', 'five', 'six', 'seven',
                       'eight', 'nine', 'ten', 'jack', 'queen', 'king', 'ace')
     MAX_COUNT = 52
-    card = card.Card(card.Card.POSSIBLE_SUITS[0], card.Card.POSSIBLE_RANKS[0])
+    my_card = Card(Card.POSSIBLE_SUITS[0], Card.POSSIBLE_RANKS[0])
 
     def setUp(self):
         pass
 
     def test_possible_values(self):
-        self.assertEqual(self.card.POSSIBLE_VALUES, self.POSSIBLE_VALUES)
+        self.assertEqual(self.my_card.POSSIBLE_VALUES, self.POSSIBLE_VALUES)
 
     def test_possible_suits(self):
-        self.assertEqual(self.card.POSSIBLE_SUITS, self.POSSIBLE_SUITS)
+        self.assertEqual(self.my_card.POSSIBLE_SUITS, self.POSSIBLE_SUITS)
 
     def test_possible_ranks(self):
-        self.assertEqual(self.card.POSSIBLE_RANKS, self.POSSIBLE_RANKS)
+        self.assertEqual(self.my_card.POSSIBLE_RANKS, self.POSSIBLE_RANKS)
 
     def test_first_card(self):
-        self.assertEqual(self.card, card.Card('hearts','two'))
+        self.assertEqual(self.my_card, Card('hearts','two'))
 
 
 if __name__ == '__main__':

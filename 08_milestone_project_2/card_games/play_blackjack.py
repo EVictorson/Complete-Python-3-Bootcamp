@@ -1,16 +1,13 @@
-import chips
-import hand
-import card
-import deck
+from playing_cards import *
 
 class PlayBlackJack:
 
     def __init__(self):
-        self.player_chips = chips.Chips()
-        self.deck = deck.Deck()
+        self.player_chips = Chips()
+        self.deck = Deck()
         self.deck.shuffle()
-        self.player_hand = hand.Hand()
-        self.dealer_hand = hand.Hand()
+        self.player_hand = Hand()
+        self.dealer_hand = Hand()
         self.playing = True
 
     def take_bet(self, chips):
@@ -80,8 +77,8 @@ class PlayBlackJack:
         Dealer hits until she reaches 17. Aces count as 1 or 11.')
 
     def deal_n_cards(self, n):
-        self.player_hand = hand.Hand()
-        self.dealer_hand = hand.Hand()
+        self.player_hand = Hand()
+        self.dealer_hand = Hand()
         for _ in range(n):
             self.player_hand.add_card(self.deck.deal_one_card())
             self.dealer_hand.add_card(self.deck.deal_one_card())

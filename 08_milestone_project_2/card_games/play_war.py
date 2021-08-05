@@ -1,6 +1,11 @@
-import player
-import deck
-import card
+"""
+play_war.py
+Created on: Aug 04, 2021
+Authors: Eric Victorson <vier0801.gmailcom>
+Info: class to play the cardgame war
+"""
+
+from playing_cards import *
 
 class PlayWar:
     """

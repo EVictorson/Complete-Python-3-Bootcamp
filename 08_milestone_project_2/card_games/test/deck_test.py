@@ -4,14 +4,14 @@ import unittest
 import copy
 import sys
 sys.path.append('../')
-import deck
+from playing_cards import Deck
 
 class TestDeck(unittest.TestCase):
 
-    deck = deck.Deck()
+    deck = Deck()
 
     def setUp(self):
-        self.deck = deck.Deck()
+        self.deck = Deck()
 
     def test_correct_number_of_cards(self):
         self.assertEqual(len(self.deck.all_cards), 52)
@@ -34,7 +34,7 @@ class TestDeck(unittest.TestCase):
             decks_are_equal = True
         else:
             decks_are_equal = False
-        self.assertEqual(are_equal, False)
+        self.assertEqual(decks_are_equal, False)
 
 
 if __name__ == '__main__':
