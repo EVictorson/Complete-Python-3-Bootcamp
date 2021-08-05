@@ -1,7 +1,5 @@
-#from card import Card
-import card
-#from card import Card
 import random
+import card
 
 class Deck:
     """
@@ -39,7 +37,7 @@ class Deck:
         return self.all_cards.pop()
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     deck = Deck()
     print(deck.all_cards)
 
