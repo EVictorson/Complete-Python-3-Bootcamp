@@ -25,8 +25,8 @@ class Card:
 
     """
     POSSIBLE_VALUES = {'two':2, 'three':3, 'four':4, 'five':5, 'six':6,
-              'seven':7, 'eight':8, 'nine':9, 'ten':10, 'jack':11,
-              'queen':12, 'king':13, 'ace':14}
+                       'seven':7, 'eight':8, 'nine':9, 'ten':10, 'jack':11,
+                       'queen':12, 'king':13, 'ace':14}
     POSSIBLE_SUITS = ('hearts', 'diamonds', 'spades', 'clubs')
     POSSIBLE_RANKS = ('two', 'three', 'four', 'five', 'six', 'seven',
                       'eight', 'nine', 'ten', 'jack', 'queen', 'king', 'ace')
@@ -46,13 +46,13 @@ class Card:
         return self.rank + " of " + self.suit
 
     def __repr__(self):
-        return '{rank} of {suit}'.format(rank = self.rank, suit = self.suit)
+        return '{rank} of {suit}'.format(rank=self.rank, suit=self.suit)
 
     def __eq__(self, other):
-        return (self.value == other.value)
+        return self.value == other.value
 
     def __gt__(self, other):
-        return (self.value > other.value)
+        return self.value > other.value
 
     def __lt__(self, other):
-        return (self.value < other.value)
+        return self.value < other.value
