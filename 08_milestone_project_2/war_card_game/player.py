@@ -21,7 +21,7 @@ class Player:
 
     def add_cards(self, new_cards):
         """ add cards to the player in the event they won """
-        if type(new_cards) == type([]):
+        if isinstance(new_cards, list):
             # If a list of cards is passed, extend the current list
             self.hand.extend(new_cards)
         else:
@@ -32,6 +32,6 @@ class Player:
         return 'Player {} has {} cards'.format(self.name, len(self.hand))
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     new_player = Player("Eric")
     print(new_player)
