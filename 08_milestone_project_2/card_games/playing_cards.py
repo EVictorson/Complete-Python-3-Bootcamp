@@ -109,6 +109,12 @@ class Deck:
         self.all_cards = []
         self._create_deck()
 
+    def __len__(self):
+        return len(self.all_cards)
+
+    def __getitem__(self, position):
+        return self.all_cards[position]
+
     def _create_deck(self):
         """Creates the deck."""
         for suit in Card.POSSIBLE_SUITS:
@@ -147,6 +153,9 @@ class Hand:
         self.cards = []
         self.value = 0
         self.aces = 0
+
+    def __len__(self):
+        return len(self.cards)
 
     def add_card(self, card_in):
         """Add a card to the player's hand."""
