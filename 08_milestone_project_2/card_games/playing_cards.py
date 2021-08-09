@@ -117,10 +117,8 @@ class Deck:
 
     def _create_deck(self):
         """Creates the deck."""
-        for suit in Card.POSSIBLE_SUITS:
-            for rank in Card.POSSIBLE_RANKS:
-                created_card = Card(suit, rank)
-                self.all_cards.append(created_card)
+        self.all_cards = [Card(suit, rank) for suit in Card.POSSIBLE_SUITS
+                                           for rank in Card.POSSIBLE_RANKS]
 
     def shuffle(self):
         """Shuffles the deck. """
